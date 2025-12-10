@@ -40,9 +40,9 @@
             tblogin_username.BackColor = SystemColors.Menu;
             tblogin_username.BorderStyle = BorderStyle.None;
             tblogin_username.Font = new Font("Segoe UI", 16F);
-            tblogin_username.Location = new Point(1143, 294);
+            tblogin_username.Location = new Point(1146, 294);
             tblogin_username.Name = "tblogin_username";
-            tblogin_username.Size = new Size(266, 36);
+            tblogin_username.Size = new Size(449, 36);
             tblogin_username.TabIndex = 1;
             // 
             // tblogin_password
@@ -50,9 +50,9 @@
             tblogin_password.BackColor = SystemColors.Menu;
             tblogin_password.BorderStyle = BorderStyle.None;
             tblogin_password.Font = new Font("Segoe UI", 16F);
-            tblogin_password.Location = new Point(1143, 468);
+            tblogin_password.Location = new Point(1146, 468);
             tblogin_password.Name = "tblogin_password";
-            tblogin_password.Size = new Size(266, 36);
+            tblogin_password.Size = new Size(449, 36);
             tblogin_password.TabIndex = 2;
             // 
             // btnlogin

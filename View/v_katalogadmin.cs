@@ -116,14 +116,16 @@ namespace TaniGrow2.View
                 ForeColor = Color.DimGray
             };
 
-            card.Controls.Add(lblDeskripsi);
-
             card.Controls.Add(pic);
             card.Controls.Add(lblNama);
             card.Controls.Add(lblKategori);
             card.Controls.Add(lblStok);
             card.Controls.Add(lblHarga);
+            card.Controls.Add(lblDeskripsi);
 
+            // ============================
+            // BUTTON EDIT
+            // ============================
             Button btnEdit = new Button
             {
                 Text = "Edit",
@@ -135,6 +137,7 @@ namespace TaniGrow2.View
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Flat
             };
+
             btnEdit.Click += (s, e) =>
             {
                 var editForm = new v_tambahkatalog(this, produk);
@@ -144,8 +147,54 @@ namespace TaniGrow2.View
 
             card.Controls.Add(btnEdit);
 
+            // ============================
+            // BUTTON HAPUS (Baru)
+            // ============================
+            Button btnHapus = new Button
+            {
+                Text = "Hapus",
+                Width = 110,
+                Height = 35,
+                Top = card.Height - 60,
+                Left = btnEdit.Right + 10,
+                BackColor = Color.Firebrick,
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Flat
+            };
+
+            btnHapus.Click += (s, e) =>
+            {
+                var confirm = MessageBox.Show(
+                    $"Apakah Anda yakin ingin menghapus produk \"{produk.NamaProduk}\"?",
+                    "Konfirmasi Hapus",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
+
+                if (confirm == DialogResult.Yes)
+                {
+                    bool success = ctrlProduk.HapusProduk(produk.IdProduk);
+
+                    if (success)
+                    {
+                        MessageBox.Show("Produk berhasil dihapus!", "Success",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        LoadKatalog(); // refresh list
+                    }
+                    else
+                    {
+                        MessageBox.Show("Gagal menghapus produk!", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            };
+
+            card.Controls.Add(btnHapus);
+
             return card;
         }
+
 
         private void btntambahkatalog_Click(object sender, EventArgs e)
         {

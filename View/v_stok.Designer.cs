@@ -40,15 +40,15 @@
             flowLayoutPanel1.BackColor = Color.Transparent;
             flowLayoutPanel1.Location = new Point(12, 220);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1354, 823);
+            flowLayoutPanel1.Size = new Size(1354, 794);
             flowLayoutPanel1.TabIndex = 0;
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.ActiveCaption;
+            panel1.BackColor = SystemColors.ButtonHighlight;
             panel1.Location = new Point(1388, 255);
             panel1.Name = "panel1";
-            panel1.Size = new Size(492, 788);
+            panel1.Size = new Size(492, 759);
             panel1.TabIndex = 1;
             // 
             // btnrestock
